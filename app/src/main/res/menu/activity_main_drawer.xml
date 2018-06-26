@@ -22,15 +22,15 @@
             android:title="@string/nav_list" />
         <item
             android:id="@+id/nav_viewpager"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_carousel"
             android:title="@string/nav_viewpager" />
         <item
             android:id="@+id/nav_chart"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_chart"
             android:title="@string/nav_chart" />
         <item
             android:id="@+id/nav_unity"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_unity"
             android:title="@string/nav_unity" />
     </group>
 
@@ -42,7 +42,7 @@
                 android:title="@string/nav_share" />
             <item
                 android:id="@+id/nav_code"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_menu_code"
                 android:title="@string/nav_code" />
         </menu>
     </item>
