@@ -1,5 +1,7 @@
 package cn.sh.bokun.bokundemo;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -82,11 +84,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the action
+            //Maybe...useless
         } else if (id == R.id.nav_login) {
 
         } else if (id == R.id.nav_qr) {
-
+            Intent intent = new Intent(MainActivity.this,ScanActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_list) {
 
         } else if (id == R.id.nav_viewpager) {
@@ -98,7 +101,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_code) {
-
+            Intent intent = new Intent();
+            intent.setAction("android.intent.action.VIEW");
+            Uri content_url = Uri.parse("https://github.com/gazerhuang/BokunDemo");
+            intent.setData(content_url);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
