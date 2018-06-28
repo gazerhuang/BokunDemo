@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -93,7 +94,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_list) {
 
         } else if (id == R.id.nav_viewpager) {
-
+            Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_chart) {
 
         } else if (id == R.id.nav_unity) {

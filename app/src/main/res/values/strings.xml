@@ -19,6 +19,8 @@
     <string name="communicate">Communicate</string>
     <string name="light_off">补光灯关闭</string>
     <string name="scan_tips">请将镜头对准二维码进行扫描</string>
+    <string name="first_page">这是第一个页面</string>
+    <string name="second_page">这是第二个页面</string>
 
 
 </resources>
