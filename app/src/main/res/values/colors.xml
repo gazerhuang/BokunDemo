@@ -5,4 +5,65 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="actionbar_opacity">#33000000</color>
+
+    <!--color for md-->
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+
+    <color name="red">#ffF44336</color>
+    <color name="redDark">#ffD32F2F</color>
+
+    <color name="pink">#ffE91E63</color>
+    <color name="pinkDark">#C2185B</color>
+
+    <color name="purple">#ff9C27B0</color>
+    <color name="purpleDark">#ff7B1FA2</color>
+
+    <color name="deepPurple">#ff673AB7</color>
+    <color name="deepPurpleDark">#ff512DA8</color>
+
+    <color name="indigo">#ff3F51B5</color>
+    <color name="indigoDark">#ff303F9F</color>
+
+    <color name="blue">#ff2196F3</color>
+    <color name="blueDark">#ff1976D2</color>
+
+    <color name="lightBlue">#ff03A9F4</color>
+    <color name="lightBlueDark">#ff0288D1</color>
+
+    <color name="cyan">#ff00BCD4</color>
+    <color name="cyanDark">#ff0097A7</color>
+
+    <color name="teal">#ff009688</color>
+    <color name="tealDark">#ff00796B</color>
+
+    <color name="green">#ff4CAF50</color>
+    <color name="greenDark">#ff388E3C</color>
+
+    <color name="lightGreen">#ff8BC34A</color>
+    <color name="lightGreenDark">#ff689F38</color>
+
+    <color name="lime">#ffCDDC39</color>
+    <color name="limeDark">#ffAFB42B</color>
+
+    <color name="yellow">#ffFFEB3B</color>
+    <color name="yellowDark">#ffFBC02D</color>
+
+    <color name="amber">#ffFFC107</color>
+    <color name="amberDark">#ffFFA000</color>
+
+    <color name="orange">#ffFF9800</color>
+    <color name="orangeDark">#ffF57C00</color>
+
+    <color name="deepOrange">#ffFF5722</color>
+    <color name="deepOrangeDark">#ffE64A19</color>
+
+    <color name="brown">#ff795548</color>
+    <color name="brownDark">#ff5D4037</color>
+
+    <color name="grey">#ff9E9E9E</color>
+    <color name="greyDark">#ff616161</color>
+
+    <color name="blueGrey">#ff607D8B</color>
+    <color name="blueGreyDark">#ff455A64</color>
 </resources>

@@ -35,7 +35,7 @@ public class ViewPagerActivity extends AppCompatActivity {
         //建一个适配器
         MyPagerAdater pagerAdater = new MyPagerAdater(pageList);
 
-        //设置到viewpager里，到此完成了。
+        //设置到viewpager里，到此完成了
         viewpager.setAdapter(pagerAdater);
 
     }

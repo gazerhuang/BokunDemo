@@ -87,15 +87,13 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             //Maybe...useless
         } else if (id == R.id.nav_login) {
-
+            StartActivity(LoginActivity.class);
         } else if (id == R.id.nav_qr) {
-            Intent intent = new Intent(MainActivity.this,ScanActivity.class);
-            startActivity(intent);
+            StartActivity(ScanActivity.class);
         } else if (id == R.id.nav_list) {
 
         } else if (id == R.id.nav_viewpager) {
-            Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
-            startActivity(intent);
+            StartActivity(ViewPagerActivity.class);
         } else if (id == R.id.nav_chart) {
 
         } else if (id == R.id.nav_unity) {
@@ -113,5 +111,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void StartActivity(Class<?> cls){
+        Intent intent = new Intent(MainActivity.this,cls);
+        startActivity(intent);
     }
 }
