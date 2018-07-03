@@ -25,6 +25,8 @@
     <string name="prompt_password">密码</string>
     <string name="action_sign_in_short">登录</string>
     <string name="action_sign_in">登 录</string>
+    <string name="item_state">任务状态</string>
+    <string name="item_time">任务时间</string>
 
 
 </resources>

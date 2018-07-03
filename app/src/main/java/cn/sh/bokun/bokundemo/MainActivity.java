@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_qr) {
             StartActivity(ScanActivity.class);
         } else if (id == R.id.nav_list) {
-
+            StartActivity(RecyclerViewActivity.class);
         } else if (id == R.id.nav_viewpager) {
             StartActivity(ViewPagerActivity.class);
         } else if (id == R.id.nav_chart) {

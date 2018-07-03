@@ -25,7 +25,8 @@
             android:name=".ScanActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RecyclerViewActivity"/>
     </application>
 
 </manifest>
