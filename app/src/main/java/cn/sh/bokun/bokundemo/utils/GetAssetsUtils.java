@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class getAssetsUtils {
+public class GetAssetsUtils {
     //读取本地Json文件
     public static String getJson(String fileName, Context context) {
         //将json数据变成字符串
