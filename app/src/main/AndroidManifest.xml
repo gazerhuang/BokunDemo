@@ -27,7 +27,11 @@
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".ChartActivity"/>
+        <activity android:name=".ChartActivity" />
+        <activity
+            android:name=".UnityActivity"
+            android:process="e.unity3d"/>
+        <activity android:name=".utils.UnityPlayerActivity" />
     </application>
 
 </manifest>

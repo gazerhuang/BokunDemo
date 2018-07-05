@@ -16,6 +16,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import cn.sh.bokun.bokundemo.utils.UnityPlayerActivity;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -96,7 +98,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_chart) {
             StartActivity(ChartActivity.class);
         } else if (id == R.id.nav_unity) {
-
+            StartActivity(UnityActivity.class);
         } else if (id == R.id.nav_share) {
             Intent textIntent = new Intent(Intent.ACTION_SEND);
             textIntent.setType("text/plain");
