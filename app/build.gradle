@@ -31,17 +31,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'me.dm7.barcodescanner:zxing:1.9.8'
-    //二维码扫描Zxing库
-    implementation 'com.github.ronaldsmartin:Material-ViewPagerIndicator:1.0.4'
-    //ViewPager 小圆点
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
-    //BRVAH RecyclerAdapter
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-    //okhttp3
-    implementation 'com.alibaba:fastjson:1.1.68.android'
-    //fastjson
-    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
-    //hellocharts
-    implementation files('libs/unity-classes.jar')
+    implementation 'me.dm7.barcodescanner:zxing:1.9.8'//二维码扫描Zxing库
+    implementation 'com.github.ronaldsmartin:Material-ViewPagerIndicator:1.0.4'//ViewPager 小圆点
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'//BRVAH RecyclerAdapter
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'//okhttp3
+    implementation 'com.alibaba:fastjson:1.1.68.android'//fastjson
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'//hellocharts
+    implementation files('libs/unity-classes.jar')//Unity
 }
