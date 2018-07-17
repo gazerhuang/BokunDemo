@@ -27,6 +27,7 @@
     <string name="action_sign_in">登 录</string>
     <string name="item_state">任务状态</string>
     <string name="item_time">任务时间</string>
+    <string name="btn_rotate">转!</string>
 
 
 </resources>

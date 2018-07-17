@@ -30,7 +30,10 @@
         <activity android:name=".ChartActivity" />
         <activity
             android:name=".UnityActivity"
-            android:process="e.unity3d"/>
+            android:process="e.unity3d">
+            <meta-data android:name="android.app.lib_name" android:value="unity" />
+            <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true" />
+        </activity>
         <activity android:name=".utils.UnityPlayerActivity" />
     </application>
 

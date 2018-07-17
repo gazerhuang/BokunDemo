@@ -3,12 +3,18 @@ package cn.sh.bokun.bokundemo;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.unity3d.player.*;
+import com.unity3d.player.UnityPlayer;
+
+import cn.sh.bokun.bokundemo.utils.UnityPlayerActivity;
+
 
 public class UnityActivity extends UnityPlayerActivity {
+    private final static String TAG = "UnityActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +24,15 @@ public class UnityActivity extends UnityPlayerActivity {
         LinearLayout ll_unity = findViewById(R.id.unityViewLayout);
         View mView = mUnityPlayer.getView();
         ll_unity.addView(mView);
+
+        Button button = findViewById(R.id.btn_rotate);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UnityPlayer.UnitySendMessage("Cube", "RotateCube", "80");
+                Log.d(TAG, "onClick: 111");
+            }
+        });
     }
 
     @Override
