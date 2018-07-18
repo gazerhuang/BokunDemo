@@ -5,8 +5,11 @@ import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
 
 import com.unity3d.player.UnityPlayer;
 
@@ -30,7 +33,8 @@ public class UnityActivity extends UnityPlayerActivity {
             @Override
             public void onClick(View view) {
                 UnityPlayer.UnitySendMessage("Cube", "RotateCube", "80");
-                Log.d(TAG, "onClick: 111");
+                Log.d(TAG, "onClick: aaaaaaa");
+                //Toast.makeText(UnityActivity.this,"1111",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -51,5 +55,9 @@ public class UnityActivity extends UnityPlayerActivity {
                     }
                 }).show();
         super.onBackPressed();
+    }
+
+    public void rotate(View view) {
+        UnityPlayer.UnitySendMessage("Cube", "RotateCube", "80");
     }
 }
