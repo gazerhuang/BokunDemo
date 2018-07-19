@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_update) {
+            StartActivity(UpdateActivity.class);
         }
 
         return super.onOptionsItemSelected(item);
@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             //Maybe...useless
+            return true;
         } else if (id == R.id.nav_login) {
             StartActivity(LoginActivity.class);
         } else if (id == R.id.nav_qr) {
