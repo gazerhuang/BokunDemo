@@ -36,8 +36,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
 
+        //初始化视图
         initView();
+        //初始化数据
         initData();
+        //初始化适配器
         initAdapter();
     }
 

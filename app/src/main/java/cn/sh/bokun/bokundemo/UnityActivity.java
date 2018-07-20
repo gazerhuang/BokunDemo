@@ -39,6 +39,7 @@ public class UnityActivity extends UnityPlayerActivity {
         });
     }
 
+    /*unity关闭方法*/
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this).setTitle("确认退出Unity吗？")

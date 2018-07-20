@@ -32,8 +32,9 @@ public class ChartActivity extends AppCompatActivity {
         chart = findViewById(R.id.chart1);
         chart.setOnValueTouchListener(new ValueTouchListener());
 
-        // Generate some random values.
+        //生成随机数值
         generateValues();
+        //赋值图表
         generateData();
     }
 
