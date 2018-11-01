@@ -32,6 +32,10 @@
             android:id="@+id/nav_unity"
             android:icon="@drawable/ic_menu_unity"
             android:title="@string/nav_unity" />
+        <item
+            android:id="@+id/nav_webview"
+            android:icon="@drawable/ic_baseline_web_24px"
+            android:title="@string/nav_webview" />
     </group>
 
     <item android:title="@string/communicate">

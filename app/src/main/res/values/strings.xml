@@ -14,6 +14,7 @@
     <string name="nav_viewpager">滑动切换</string>
     <string name="nav_chart">图表</string>
     <string name="nav_unity">Unity嵌入</string>
+    <string name="nav_webview">WebView</string>
     <string name="nav_share">分享</string>
     <string name="nav_code">源代码</string>
     <string name="communicate">Communicate</string>

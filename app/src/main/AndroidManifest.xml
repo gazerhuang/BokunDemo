@@ -44,6 +44,8 @@
         <activity android:name=".utils.UnityPlayerActivity" />
         <activity android:name=".UpdateActivity" />
         <activity android:name=".IMActivity" />
+        <activity android:name=".WebViewActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

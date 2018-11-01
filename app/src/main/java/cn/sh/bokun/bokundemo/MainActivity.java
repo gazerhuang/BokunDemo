@@ -98,6 +98,8 @@ public class MainActivity extends AppCompatActivity
             StartActivity(ChartActivity.class);
         } else if (id == R.id.nav_unity) {
             StartActivity(UnityActivity.class);
+        } else if (id == R.id.nav_webview) {
+            StartActivity(WebViewActivity.class);
         } else if (id == R.id.nav_share) {
             Intent textIntent = new Intent(Intent.ACTION_SEND);
             textIntent.setType("text/plain");
