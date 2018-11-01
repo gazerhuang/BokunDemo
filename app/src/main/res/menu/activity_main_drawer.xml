@@ -36,6 +36,10 @@
             android:id="@+id/nav_webview"
             android:icon="@drawable/ic_baseline_web_24px"
             android:title="@string/nav_webview" />
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_baseline_notifications_none_24px"
+            android:title="@string/nav_notification" />
     </group>
 
     <item android:title="@string/communicate">
