@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        new Thread(initData).start();
+        //new Thread(initData).start();
     }
 
     Runnable initData = new Runnable() {
