@@ -15,11 +15,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import cn.sh.bokun.bokundemo.utils.NotificationUtils;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private long mPressedTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,21 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+//            双击退出APP,不起效注意是不是有Activity没有finish掉
+            //super.onBackPressed();
+
+            long mNowTime = System.currentTimeMillis();//获取第一次按键时间
+            if ((mNowTime - mPressedTime) > 2000) {//比较两次按键时间差
+                Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                mPressedTime = mNowTime;
+            } else {//退出程序
+                //销毁
+//            this.finish();
+//            System.exit(0);
+
+                //不销毁
+                moveTaskToBack(false);
+            }
         }
     }
 
