@@ -40,6 +40,10 @@
             android:id="@+id/nav_notification"
             android:icon="@drawable/ic_baseline_notifications_none_24px"
             android:title="@string/nav_notification" />
+        <item
+            android:id="@+id/nav_call"
+            android:icon="@drawable/ic_baseline_call_24px"
+            android:title="@string/nav_call" />
     </group>
 
     <item android:title="@string/communicate">
