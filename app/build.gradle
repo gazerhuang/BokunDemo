@@ -38,4 +38,5 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.1.68.android'//fastjson
     implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'//hellocharts
     implementation files('libs/unity-classes.jar')//Unity
+    implementation 'com.azhon:appupdate:2.7.0'
 }

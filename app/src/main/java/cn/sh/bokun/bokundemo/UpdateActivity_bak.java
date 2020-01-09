@@ -8,12 +8,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +22,6 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import com.azhon.appupdate.manager.DownloadManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,15 +32,13 @@ import cn.sh.bokun.bokundemo.utils.DownloadUtil;
 import cn.sh.bokun.bokundemo.utils.OkHttpUtils;
 import okhttp3.Response;
 
-public class UpdateActivity extends AppCompatActivity {
+public class UpdateActivity_bak extends AppCompatActivity {
 
     private static final String TAG = "UpdateActivity";
     private ProgressDialog progressDialog;
     private Button button;
     private String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
     private final int PERMS_REQUEST_CODE = 200;
-
-    private DownloadManager manager;
 
     Handler handler = new Handler(new Handler.Callback() {
         @Override
@@ -52,12 +49,12 @@ public class UpdateActivity extends AppCompatActivity {
             if(!Objects.requireNonNull(val).isEmpty()){
                 try {
                     JSONObject jsonObject = JSONObject.parseObject(val);
-                    if(CommonUtils.getVersionCode(UpdateActivity.this)<jsonObject.getIntValue("versionCode")){
+                    if(CommonUtils.getVersionCode(UpdateActivity_bak.this)<jsonObject.getIntValue("versionCode")){
                         //Toast.makeText(MainActivity.this,"检测到最新版本："+jsonObject.getIntValue("lastVision"),Toast.LENGTH_SHORT).show();
                         showUpdaloadDialog(jsonObject.getString("msg"),jsonObject.getString("url"));
                     }
                     else {
-                        Toast.makeText(UpdateActivity.this,"已经是最新版本",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UpdateActivity_bak.this,"已经是最新版本",Toast.LENGTH_SHORT).show();
                     }
 
 
@@ -121,26 +118,66 @@ public class UpdateActivity extends AppCompatActivity {
     };
 
     private void showUpdaloadDialog(String msg, final String downloadUrl){
-        new AlertDialog.Builder(this)
-                .setTitle("发现新版本")
-                .setMessage(msg)
-                .setPositiveButton("升级", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        manager = DownloadManager.getInstance(UpdateActivity.this);
-                        manager.setApkName("HN.apk")
-                                .setAuthorities("cn.sh.bokun.bokundemo.fileprovider")
-                                .setApkUrl(downloadUrl)
-                                .setSmallIcon(R.mipmap.ic_launcher)
-                                .download();
-                    }
-                }).create().show();
+        // 这里的属性可以一直设置，因为每次设置后返回的是一个builder对象
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // 设置提示框的标题
+        builder.setTitle("版本升级").
+                setIcon(R.mipmap.ic_launcher). // 设置提示框的图标
+                setMessage(msg).// 设置要显示的信息
+                setPositiveButton("确定", new DialogInterface.OnClickListener() {// 设置确定按钮
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startUpload(downloadUrl);//下载最新的版本程序
+            }
+        }).setNegativeButton("取消", null);//设置取消按钮,null是什么都不做，并关闭对话框
+        AlertDialog alertDialog = builder.create();
+        // 显示对话框
+        alertDialog.show();
     }
 
+    private void startUpload(String downloadUrl){
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progressDialog.setMessage("正在下载新版本");
+        progressDialog.setCancelable(false);//不能手动取消下载进度对话框
+        progressDialog.show();
+
+        final String fileSavePath=DownloadUtil.getSaveFilePath(downloadUrl);
+
+        DownloadUtil.get().download(downloadUrl, "download", new DownloadUtil.OnDownloadListener() {
+            @Override
+            public void onDownloadSuccess() {
+                progressDialog.dismiss();
+                openAPK(fileSavePath);
+            }
+            @Override
+            public void onDownloading(int progress) {
+                progressDialog.setProgress(progress);
+            }
+            @Override
+            public void onDownloadFailed() {
+                progressDialog.dismiss();
+            }
+        });
 
 
+    }
 
+    private void openAPK(String fileSavePath){
+        File file=new File(fileSavePath);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        Uri data;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {//判断版本大于等于7.0
+            // "com.ansen.checkupdate.fileprovider"即是在清单文件中配置的authorities
+            // 通过FileProvider创建一个content类型的Uri
+            data = FileProvider.getUriForFile(this, "cn.sh.bokun.bokundemo.fileprovider", file);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);// 给目标应用一个临时授权
+        } else {
+            data = Uri.fromFile(file);
+        }
+        intent.setDataAndType(data, "application/vnd.android.package-archive");
+        startActivity(intent);
+    }
 
     @Override
     public void onRequestPermissionsResult(int permsRequestCode, String[] permissions, int[] grantResults){
